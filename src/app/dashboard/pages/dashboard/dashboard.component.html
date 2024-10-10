@@ -1,7 +1,7 @@
 <div>
     <h1>Dashboard</h1>
 
-    <button (click)="createEvent()">Crear Evento</button>
+    <button mat-raised-button (click)="createEvent()">Crear Evento</button>
 
     <div *ngIf="(events$ | async)?.loading">
         <p>Loading...</p>
