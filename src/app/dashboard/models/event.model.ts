@@ -1,9 +1,9 @@
 export interface EventModel {
-    id: number;
+    id?: number;
     name: string;
     description: string;
     date: Date;
-    status: EventStatus;
+    status?: EventStatus;
 }
 
 export enum EventStatus {

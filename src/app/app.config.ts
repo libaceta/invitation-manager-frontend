@@ -11,6 +11,7 @@ import { SessionEffects } from './store/effects/session.effect';
 import { eventsReducer } from './store/reducers/events.reducer';
 import { EventsEffects } from './store';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -32,6 +33,6 @@ export const appConfig: ApplicationConfig = {
     provideEffects([
       SessionEffects,
       EventsEffects
-    ])
+    ]), provideAnimationsAsync()
   ]
 };
