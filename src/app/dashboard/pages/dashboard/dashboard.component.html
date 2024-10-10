@@ -1,0 +1,11 @@
+<p>dashboard works!</p>
+
+<div *ngIf="(events$ | async)?.loading">
+    <p>Loading...</p>
+</div>
+
+<div *ngIf="!(events$ | async)?.loading && (events$ | async)?.events">
+    <div *ngFor="let event of (events$ | async)?.events">
+        <app-event-item [event]="event" />
+    </div>
+</div>
