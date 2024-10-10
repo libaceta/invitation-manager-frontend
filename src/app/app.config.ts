@@ -10,11 +10,13 @@ import { sessionReducer } from './store/reducers/session.reducer';
 import { SessionEffects } from './store/effects/session.effect';
 import { eventsReducer } from './store/reducers/events.reducer';
 import { EventsEffects } from './store';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
+    provideHttpClient(withInterceptorsFromDi()),
     provideStore({ 
       session: sessionReducer,
       events: eventsReducer
